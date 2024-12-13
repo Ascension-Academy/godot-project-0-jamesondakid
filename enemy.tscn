@@ -1,16 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://ci2q1wngtv2dh"]
+extends Node2D
 
-[ext_resource type="Texture2D" uid="uid://46why1cabkhp" path="res://assets/ufoGreen.png" id="1_gs230"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_51vql"]
-radius = 12.0
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
 
-[node name="enemy" type="Area2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0, 0, 0.0235294, 1)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_gs230")
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_51vql")
+
+func _on_maze_body_exited(body):
+	get_tree().reload_current_scene()
+
+
+func _on_enemy_body_entered(body):
+	get_tree().reload_current_scene()
