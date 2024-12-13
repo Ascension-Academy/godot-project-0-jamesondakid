@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ci2q1wngtv2dh"]
+
+[ext_resource type="Texture2D" uid="uid://46why1cabkhp" path="res://assets/ufoGreen.png" id="1_gs230"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_51vql"]
+radius = 12.0
+
+[node name="enemy" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0.0235294, 1)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_gs230")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_51vql")

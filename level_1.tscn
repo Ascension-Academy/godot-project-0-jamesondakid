@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=3 uid="uid://bg35wreuvh4bp"]
+
+[ext_resource type="Texture2D" uid="uid://bgrxvv5bdx4ik" path="res://assets/purple.png" id="1_p2u02"]
+[ext_resource type="Script" path="res://level_1.gd" id="1_sgk8j"]
+[ext_resource type="PackedScene" uid="uid://bw6672r5vhd67" path="res://maze.tscn" id="2_p36gd"]
+[ext_resource type="PackedScene" uid="uid://b70vxhk8xxkh4" path="res://player.tscn" id="2_q16ci"]
+[ext_resource type="PackedScene" uid="uid://ci2q1wngtv2dh" path="res://enemy.tscn" id="5_fhlwp"]
+
+[node name="level 1" type="Node2D"]
+script = ExtResource("1_sgk8j")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 1403.0
+offset_bottom = 824.0
+texture = ExtResource("1_p2u02")
+stretch_mode = 1
+
+[node name="Maze" parent="." instance=ExtResource("2_p36gd")]
+position = Vector2(577, 357)
+
+[node name="player" parent="." instance=ExtResource("2_q16ci")]
+position = Vector2(478, 395)
+
+[node name="enemy" parent="." instance=ExtResource("5_fhlwp")]
+position = Vector2(522, 339)
+
+[node name="enemy2" parent="." instance=ExtResource("5_fhlwp")]
+position = Vector2(619, 342)
+
+[node name="enemy3" parent="." instance=ExtResource("5_fhlwp")]
+position = Vector2(582, 292)
+
+[node name="enemy4" parent="." instance=ExtResource("5_fhlwp")]
+position = Vector2(652, 306)
+
+[node name="enemy5" parent="." instance=ExtResource("5_fhlwp")]
+position = Vector2(771, 286)
+
+[node name="enemy6" parent="." instance=ExtResource("5_fhlwp")]
+position = Vector2(810, 326)
+
+[node name="enemy7" parent="." instance=ExtResource("5_fhlwp")]
+position = Vector2(861, 333)
+
+[node name="enemy8" parent="." instance=ExtResource("5_fhlwp")]
+position = Vector2(881, 370)
+
+[node name="enemy9" parent="." instance=ExtResource("5_fhlwp")]
+position = Vector2(936, 361)
+
+[node name="enemy10" parent="." instance=ExtResource("5_fhlwp")]
+position = Vector2(902, 420)
+
+[node name="enemy11" parent="." instance=ExtResource("5_fhlwp")]
+position = Vector2(950, 401)
+
+[node name="enemy12" parent="." instance=ExtResource("5_fhlwp")]
+position = Vector2(976, 451)
+
+[connection signal="body_entered" from="Maze" to="." method="_on_maze_body_entered"]
+[connection signal="body_exited" from="Maze" to="." method="_on_maze_body_exited"]
+[connection signal="body_entered" from="enemy" to="." method="_on_enemy_body_entered"]
+[connection signal="body_entered" from="enemy2" to="." method="_on_enemy_body_entered"]
+[connection signal="body_entered" from="enemy3" to="." method="_on_enemy_body_entered"]
+[connection signal="body_entered" from="enemy4" to="." method="_on_enemy_body_entered"]
+[connection signal="body_entered" from="enemy5" to="." method="_on_enemy_body_entered"]
+[connection signal="body_entered" from="enemy6" to="." method="_on_enemy_body_entered"]
+[connection signal="body_entered" from="enemy7" to="." method="_on_enemy_body_entered"]
+[connection signal="body_entered" from="enemy8" to="." method="_on_enemy_body_entered"]
+[connection signal="body_entered" from="enemy9" to="." method="_on_enemy_body_entered"]
+[connection signal="body_entered" from="enemy10" to="." method="_on_enemy_body_entered"]
+[connection signal="body_entered" from="enemy11" to="." method="_on_enemy_body_entered"]
+[connection signal="body_entered" from="enemy12" to="." method="_on_enemy_body_entered"]
